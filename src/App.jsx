@@ -1,18 +1,15 @@
-import './App.scss';
-import './global.scss';
+import "./App.scss";
+import "./global.scss";
 
-import { ToDo } from './Components/ToDo';
-
+import { ToDo } from "./Components/ToDo";
 
 
 function App() {
-
-
   return (
     <>
-    <ToDo />
+      <ToDo />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

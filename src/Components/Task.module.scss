@@ -1,0 +1,44 @@
+@import '../global.scss';
+
+.task {
+    background: $gray-500;
+    border-radius: 8px;
+    border: 1px solid $gray-400;
+    color: $gray-200;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    font-size: .875rem;
+    margin-top: 1.5rem;
+
+    &__check_content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    &__content {
+        max-width: 39.50rem;
+        text-align: justify;
+        line-height: 1.4;
+    }
+
+    &__check {
+    
+       width: 1.09rem;
+       height: 1.09rem;
+       border-radius: 50%;
+       border: 1px solid $blue;
+    }
+
+    &__trash_icon {
+        color: $gray-300;
+    }
+}
+
+.task + .task {
+    margin-top: .75rem;
+}
