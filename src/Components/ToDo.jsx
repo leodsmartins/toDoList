@@ -1,25 +1,34 @@
 import styles from "./ToDo.module.scss";
 import rocketLogo from "../assets/rocket-logo.svg";
+import clipboard from "../assets/clipboard.svg";
+
 import { useState } from "react";
-
 import { PlusCircle } from "phosphor-react";
-
 import { Task } from "./Task";
 
 export function ToDo() {
-  const [tasks, setTasks] = useState(["Crie aqui suas tarefas"]);
-  const [newTask, setNewTask] = useState("");
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState('');
+  const [isThereTask, setIsThereTask] = useState();
 
   function handleCreateNewTask() {
     event.preventDefault();
     setTasks([...tasks, newTask]);
 
     setNewTask('');
+
+    if(tasks === 0) {
+      setIsThereTask(false);
+    } else {
+      setIsThereTask(true);
+    }
   }
 
   function handleNewTaskChange() {
     setNewTask(event.target.value);
   }
+
+  const numberOfTasks = tasks.length
 
   return (
     <>
@@ -51,18 +60,32 @@ export function ToDo() {
           <div className={styles.main__tasks_header}>
             <div className={styles.main__createdTasks}>
               <strong>Tarefas criadas</strong>
-              <span>5</span>
+              <span>{numberOfTasks}</span>
             </div>
             <div className={styles.main__completedTasks}>
               <strong>Concluídas</strong>
-              <span>2 de 5</span>
+              <span>2 de {numberOfTasks}</span>
             </div>
           </div>
-          <div className={styles.main__tasks}>
-            {tasks.map((task) => {
-              return <Task key={task} content={task} />;
-            })}
-          </div>
+            {isThereTask && (
+              tasks.map((task) => {
+                return (
+                  <div className={styles.main__tasks}>
+                  <Task key={task} content={task} />;
+                  </div>
+                )
+              })
+            )}
+
+            {!isThereTask && (
+                <>
+                  <div className={styles.main__tasks_empty}>
+                    <img src={clipboard} />
+                    <strong>Você ainda não tem tarefas cadastradas</strong>
+                    <p>Crie tarefas e organize seus itens a fazer</p>
+                  </div>
+                </>
+              )}
         </section>
       </main>
     </>

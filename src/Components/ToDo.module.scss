@@ -50,7 +50,7 @@
         border-radius: 8px;
         border: 1px solid $gray-700;
         color: $gray-300;
-        line-height: .40;
+        line-height: 1.4;
         padding: 1rem;
         position: relative;
         top: -1.6875rem;
@@ -78,7 +78,25 @@
       
     }
 
+   &__tasks_empty {
+    border-top: 1px solid $gray-400;
+    border-radius: 8px;
+    margin-top: 2rem;
+    padding-top: 4rem;
 
+    p {
+        color: $gray-300;
+        line-height: 1.4;
+    }
+
+    strong {
+        display: block;
+        color: $gray-300;
+        line-height: 1.4;
+        margin-top: 1rem;
+    }
+
+   }
 
     &__tasks_container {
         width: 100%;
