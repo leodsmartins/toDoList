@@ -90,7 +90,7 @@ export function ToDo() {
               })
             )}
 
-            {!isThereTask && (
+            {(!isThereTask || numberOfTasks === 0) && (
                 <>
                   <div className={styles.main__tasks_empty}>
                     <img src={clipboard} />
