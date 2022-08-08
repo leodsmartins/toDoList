@@ -27,18 +27,59 @@
     }
 
     &__check {
-    
        width: 1.09rem;
        height: 1.09rem;
        border-radius: 50%;
-       border: 1px solid $blue;
+       border: 2px solid $blue;
+       color: $gray-100;
+       display: flex;
+       justify-content: center;
+       align-items: center;
     }
 
-    &__trash_icon {
+    &__check:hover {
+        background: rgba($blueDark, .2);
+        border: 2px solid $blueDark;
+    }
+
+    &__taskCompleted {
+        width: 1.09rem;
+        height: 1.09rem;
+        border-radius: 50%;
+        background: $purpleDark;
+        border: 2px solid $purpleDark;
+        color: $gray-100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__taskCompleted:hover {
+        background: $purple;
+        border: 2px solid $purple;
+    }
+
+    &__contentCompleted {
         color: $gray-300;
+        text-decoration: line-through;
+    }
+
+    &__trash_button {
+        background: transparent;
+        border: none;
+        color: $gray-300;
+        border-radius: 8px;
+        padding: .5rem;
+    }
+
+    &__trash_button:hover {
+        background: $gray-400;
+        color: $danger;
     }
 }
 
 .task + .task {
     margin-top: .75rem;
 }
+
+

@@ -72,6 +72,7 @@
         justify-content: center;
         gap: .5rem;
     }
+    
 
     &__button:hover {
         background: $blue;
@@ -102,7 +103,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        margin-top: 4rem;
+        margin: 4rem 0;
     }
 
     &__tasks_header {

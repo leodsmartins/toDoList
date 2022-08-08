@@ -38,5 +38,6 @@ body {
     background: $gray-600;
 }
 
-
-
+input:focus {
+    color: $gray-100;
+}

@@ -10,6 +10,8 @@ export function ToDo() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
   const [isThereTask, setIsThereTask] = useState();
+  const [countCompletedTask, setCountCompletedTask] = useState(0)
+ 
 
   function handleCreateNewTask() {
     event.preventDefault();
@@ -28,8 +30,15 @@ export function ToDo() {
     setNewTask(event.target.value);
   }
 
-  const numberOfTasks = tasks.length
+  function deleteTasks(taskToDelete) {
+    const tasksWithoutDeletedOne = tasks.filter(task => {
+      return task !== taskToDelete;
+    })
+    setTasks(tasksWithoutDeletedOne);
+  }
 
+  const numberOfTasks = tasks.length;
+  
   return (
     <>
       <header className={styles.header}>
@@ -64,14 +73,18 @@ export function ToDo() {
             </div>
             <div className={styles.main__completedTasks}>
               <strong>Concluídas</strong>
-              <span>2 de {numberOfTasks}</span>
+              <span>{countCompletedTask} de {numberOfTasks}</span>
             </div>
           </div>
             {isThereTask && (
               tasks.map((task) => {
                 return (
-                  <div className={styles.main__tasks}>
-                  <Task key={task} content={task} />;
+                  <div className={styles.main__tasks} key={task}>
+                    <Task 
+                      content={task} 
+                      countCompletedTask={countCompletedTask} 
+                      setCountCompletedTask={setCountCompletedTask} 
+                      deleteTasks={deleteTasks} />
                   </div>
                 )
               })
