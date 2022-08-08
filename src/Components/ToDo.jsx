@@ -27,6 +27,7 @@ export function ToDo() {
   }
 
   function handleNewTaskChange() {
+    event.target.setCustomValidity('');
     setNewTask(event.target.value);
   }
 
@@ -36,6 +37,10 @@ export function ToDo() {
     })
     setTasks(tasksWithoutDeletedOne);
   }
+
+  function handleNewTaskInvalid() {
+    event.target.setCustomValidity('Este campo é obrigatório!');
+}
 
   const numberOfTasks = tasks.length;
   
@@ -59,6 +64,8 @@ export function ToDo() {
             placeholder="Adicione uma nova tarefa"
             onChange={handleNewTaskChange}
             value={newTask}
+            required
+            onInvalid={handleNewTaskInvalid}
           />
           <button className={styles.main__button} type="submit">
             Criar

@@ -43,7 +43,7 @@ export function Task({ content, setCountCompletedTask, countCompletedTask, delet
                     </div>
                     <p className={contentCompleted}>{content}</p>
                 </div>
-                <button className={styles.task__trash_button} onClick={handleDeleteTasks}>
+                <button className={styles.task__trash_button} onClick={handleDeleteTasks} title="Deletar tarefa">
                     <Trash  size={20} weight="bold" />
                 </button>
             </div>
