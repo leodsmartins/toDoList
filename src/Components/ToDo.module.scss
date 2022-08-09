@@ -1,153 +1,137 @@
-
-@import '../global.scss';
+@import "../global.scss";
 
 .header {
-    background: $gray-700;
-    height: 12.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .75rem;
-    flex: 1;
+  background: $gray-700;
+  height: 12.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
 
-    &__logo {
-        width: 1.375rem;
+  &__logo {
+    width: 1.375rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: $blue;
+
+    span {
+      color: $purpleDark;
     }
-
-    &__title {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: $blue;
-
-        span {
-            color: $purpleDark;
-        }
-    }
+  }
 }
 
 .main {
-    max-width: 46rem;
-    margin: 0 auto;
-    background: $gray-600;
-    text-align: center;
+  max-width: 46rem;
+  margin: 0 auto;
+  background: $gray-600;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  &__form {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    max-width: 45.5rem;
+    margin: 0 auto;
+    gap: 0.5rem;
+  }
 
+  &__input {
+    width: 39.875rem;
+    background: $gray-500;
+    border-radius: 8px;
+    border: 1px solid $gray-700;
+    color: $gray-300;
+    line-height: 1.4;
+    padding: 1rem;
+    position: relative;
+    top: -1.6875rem;
+  }
 
+  &__button {
+    width: 5.625rem;
+    height: 3.375rem;
+    border-radius: 8px;
+    border: none;
+    position: relative;
+    top: -1.6875rem;
+    background: $blueDark;
+    color: $gray-100;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 
-    &__form {
-        display: flex;
-        max-width: 45.5rem;
-        margin: 0 auto;
-        gap: .5rem;
-       
-    }
+  &__button:hover {
+    background: $blue;
+  }
 
-    &__input {
-        width: 39.875rem;
-        background: $gray-500;
-        border-radius: 8px;
-        border: 1px solid $gray-700;
-        color: $gray-300;
-        line-height: 1.4;
-        padding: 1rem;
-        position: relative;
-        top: -1.6875rem;
-
-    }
-
-    &__button {
-        width: 5.625rem;
-        height: 3.375rem;
-        border-radius: 8px;
-        border: none;
-        position: relative;
-        top: -1.6875rem;
-        background: $blueDark;
-        color: $gray-100;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: .5rem;
-    }
-    
-
-    &__button:hover {
-        background: $blue;
-      
-    }
-
-   &__tasks_empty {
+  &__tasks_empty {
     border-top: 1px solid $gray-400;
     border-radius: 8px;
     margin-top: 2rem;
     padding-top: 4rem;
 
     p {
-        color: $gray-300;
-        line-height: 1.4;
+      color: $gray-300;
+      line-height: 1.4;
     }
 
     strong {
-        display: block;
-        color: $gray-300;
-        line-height: 1.4;
-        margin-top: 1rem;
+      display: block;
+      color: $gray-300;
+      line-height: 1.4;
+      margin-top: 1rem;
+    }
+  }
+
+  &__tasks_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 0;
+  }
+
+  &__tasks_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__createdTasks {
+    strong {
+      color: $blue;
+      margin-right: 0.5rem;
+      font-size: 0.875rem;
     }
 
-   }
-
-    &__tasks_container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin: 4rem 0;
+    span {
+      background: $gray-400;
+      color: $gray-100;
+      padding: 0.25rem 0.5rem;
+      border-radius: 10px;
+      font-size: 0.75rem;
     }
+  }
 
-    &__tasks_header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  &__completedTasks {
+    strong {
+      color: $purple;
+      margin-right: 0.5rem;
+      font-size: 0.875rem;
     }
-
-    &__createdTasks {
-
-        strong {
-            color: $blue;
-            margin-right: .5rem;
-            font-size: .875rem;
-        }
-
-        span {
-            background: $gray-400;
-            color: $gray-100;
-            padding: .25rem .5rem;
-            border-radius: 10px;
-            font-size: .75rem;
-        }
+    span {
+      background: $gray-400;
+      color: $gray-100;
+      padding: 0.25rem 0.5rem;
+      border-radius: 10px;
+      font-size: 0.75rem;
     }
-
-    &__completedTasks {
-        strong {
-            color: $purple;
-            margin-right: .5rem;   
-            font-size: .875rem;
-
-        }
-        span {
-            background: $gray-400;
-            color: $gray-100;
-            padding: .25rem .5rem;
-            border-radius:10px;
-            font-size: .75rem;
-        }
-    }
-
+  }
 }
-
-
-
-
-

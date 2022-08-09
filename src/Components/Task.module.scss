@@ -1,85 +1,83 @@
-@import '../global.scss';
+@import "../global.scss";
 
 .task {
-    background: $gray-500;
-    border-radius: 8px;
-    border: 1px solid $gray-400;
-    color: $gray-200;
+  background: $gray-500;
+  border-radius: 8px;
+  border: 1px solid $gray-400;
+  color: $gray-200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+
+  &__check_content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__content {
+    max-width: 39.5rem;
+    text-align: justify;
+    line-height: 1.4;
+  }
+
+  &__check {
+    width: 1.09rem;
+    height: 1.09rem;
+    border-radius: 50%;
+    border: 2px solid $blue;
+    color: $gray-100;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 1rem;
-    font-size: .875rem;
-    margin-top: 1.5rem;
+  }
 
-    &__check_content {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
+  &__check:hover {
+    background: rgba($blueDark, 0.2);
+    border: 2px solid $blueDark;
+  }
 
-    &__content {
-        max-width: 39.50rem;
-        text-align: justify;
-        line-height: 1.4;
-    }
+  &__taskCompleted {
+    width: 1.09rem;
+    height: 1.09rem;
+    border-radius: 50%;
+    background: $purpleDark;
+    border: 2px solid $purpleDark;
+    color: $gray-100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    &__check {
-       width: 1.09rem;
-       height: 1.09rem;
-       border-radius: 50%;
-       border: 2px solid $blue;
-       color: $gray-100;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-    }
+  &__taskCompleted:hover {
+    background: $purple;
+    border: 2px solid $purple;
+  }
 
-    &__check:hover {
-        background: rgba($blueDark, .2);
-        border: 2px solid $blueDark;
-    }
+  &__contentCompleted {
+    color: $gray-300;
+    text-decoration: line-through;
+  }
 
-    &__taskCompleted {
-        width: 1.09rem;
-        height: 1.09rem;
-        border-radius: 50%;
-        background: $purpleDark;
-        border: 2px solid $purpleDark;
-        color: $gray-100;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  &__trash_button {
+    background: transparent;
+    border: none;
+    color: $gray-300;
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
 
-    &__taskCompleted:hover {
-        background: $purple;
-        border: 2px solid $purple;
-    }
-
-    &__contentCompleted {
-        color: $gray-300;
-        text-decoration: line-through;
-    }
-
-    &__trash_button {
-        background: transparent;
-        border: none;
-        color: $gray-300;
-        border-radius: 8px;
-        padding: .5rem;
-    }
-
-    &__trash_button:hover {
-        background: $gray-400;
-        color: $danger;
-    }
+  &__trash_button:hover {
+    background: $gray-400;
+    color: $danger;
+  }
 }
 
 .task + .task {
-    margin-top: .75rem;
+  margin-top: 0.75rem;
 }
-
-
